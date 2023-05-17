@@ -5,49 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>요소의 가로 배치 01 - display: flex</title>
+    <title>Float</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/font.css">
-    <link rel="stylesheet" href="../css/layout01.css">
+    <link rel="stylesheet" href="../css/layout02.css">
 </head>
 
 <body>
-    <h1 class="tit">
-        요소의 가로 배치 - Flex
-    </h1>
-    <h2>case 01</h2>
-    <p>가로배치의 기본, stretch된다</p>
-    <div class="container case01">
+    <h1 class="tit">Float: 요소를 가로배치하는 옛날 방법</h1>
+
+    <h2>case 01 - float 기본 가로배치</h2>
+    <p>부모요소의 높이 사라짐</p>
+    <div class="case01 container clearfix">
+        <div class="itm">01</div>
+        <div class="itm">02</div>
+        <!-- <p style="clear:both;"></p> -->
+    </div>
+
+    <h2>case 02 - float 오른쪽 배치</h2>
+    <div class="case02 container clearfix">
         <div class="itm">01</div>
         <div class="itm">02</div>
     </div>
 
-    <h2>case 02</h2>
-    <p>양끝으로 배치 - 1</p>
-    <div class="container case02">
+    <h2>case 03 - 가운데 배치</h2>
+    <div class="case03 container">
         <div class="itm">01</div>
         <div class="itm">02</div>
     </div>
 
-    <h2>case 03</h2>
-    <p>양끝으로 배치 - 2</p>
-    <div class="container case03">
-        <div class="itm">01</div>
+    <h2 class="stitle">case 04 - 양끝 배치 <i class="xi-arrow-right"></i></h2>
+    <div class="case04 container clearfix">
+        <div class="itm left">01</div>
         <div class="itm right">02</div>
-        <div class="itm right2">03</div>
-    </div>
-
-    <h2>case 04</h2>
-    <p>중앙 배치</p>
-    <div class="container case04">
-        <div class="itm">01</div>
-        <div class="itm right">02</div>
-        <div class="itm right2">03</div>
     </div>
 
     <h2>실습 예시 01</h2>
     <div class="top_bar">
-        <div class="inner">
+        <div class="inner clearfix">
             <div class="slogan">
                 Lorem ipsum dolor sit.
             </div>
@@ -59,20 +54,21 @@
         </div>
     </div>
     <header id="header">
-        <div class="inner">
+        <div class="inner clearfix">
             <h1>LOGO</h1>
-            <nav class="gnb">
-                <ul>
-                    <li><a href="">menu01</a></li>
-                    <li><a href="">menu02</a></li>
-                    <li><a href="">menu03</a></li>
-                    <li><a href="">menu04</a></li>
-                </ul>
-            </nav>
-            <div class="right">010-1234-5678</div>
+            <div class="service">
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="">menu01</a></li>
+                        <li><a href="">menu02</a></li>
+                        <li><a href="">menu03</a></li>
+                        <li><a href="">menu04</a></li>
+                    </ul>
+                </nav>
+                <div class="right">010-1234-5678</div>
+            </div>
         </div>
     </header>
-
     <section id="event">
         <h2>Lorem ipsum dolor sit.</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, maxime.</p>
@@ -88,7 +84,6 @@
             </figure>
         </div>
     </section>
-
 </body>
 
 </html>

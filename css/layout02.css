@@ -1,3 +1,7 @@
+body {
+    height: 120vh;
+}
+
 h1.tit {
     margin: 50px;
     font-size: 30px;
@@ -15,7 +19,7 @@ h2 {
 
 p {
     text-align: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .container {
@@ -32,105 +36,125 @@ p {
 }
 
 .case01 {
-    display: flex;
-    gap: 30px;
+    /* overflow: hidden; */
+    /* float 비추천, flex에서 쓰이기도 함 */
 }
 
-.case02 {
-    display: flex;
-    justify-content: space-between;
+/* clearfix */
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.case01>div {
+    float: left;
+}
+
+.case02>div {
+    float: right;
 }
 
 .case03 {
-    display: flex;
+    text-align: center;
+    font-size: 0;
 }
 
-.case03 .right {
-    margin: 0 0 0 auto;
+.case03>div {
+    display: inline-block;
+    font-size: 16px;
 }
 
-.case03 .right2 {
-    margin: 0 0 0 100px;
+.case04 .left {
+    float: left;
 }
 
-.case04 {
-    display: flex;
-    justify-content: center;
-    /* justify-content: flex-end; (오른쪽)*/
-    gap: 30px;
+.case04 .right {
+    float: right;
+}
+
+.stitle {
+    text-align: left;
+    width: 1200px;
+    margin: 50px auto 20px auto;
+
+}
+
+.stitle i {
+    float: right;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
 }
 
 .top_bar {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-}
-
-.top_bar .inner {
-    display: flex;
-    width: 1200px;
-    margin: 0 auto;
     line-height: 30px;
 }
 
-.top_bar .customer {
-    display: flex;
-    margin: 0 0 0 auto;
+.top_bar .inner {
+    width: 1200px;
+    margin: 0 auto;
 }
 
-.top_bar .customer li {
+.top_bar .inner .slogan {
+    float: left;
+}
+
+.top_bar .inner .customer {
+    float: right;
+}
+
+.top_bar .inner .customer li {
+    float: left;
     padding: 0 10px;
     border-right: 1px solid #ddd;
 }
 
-/* 
-#header * {
-    outline: 1px solid tomato;
-}
- */
 #header {
-    display: flex;
-    /* align-items: center; */
-    height: 100px;
     background: #f9f9f9;
 }
 
 #header .inner {
-    display: flex;
-    align-items: center;
     width: 1200px;
     margin: 0 auto;
+    line-height: 100px;
 }
 
 #header h1 {
-    /* 상단 h1 스타일 해제 */
-    text-align: left;
-    margin: 0;
+    float: left;
 }
 
-#header .gnb {
-    margin: 0 0 0 auto;
+#header .service {
+    float: right;
 }
 
-#header .right {
-    margin: 0 0 0 50px;
-    color: tomato;
-    font-size: 30px;
-    font-weight: 700;
+#header .service>* {
+    float: left;
 }
 
-#header .gnb>ul {
-    display: flex;
-    gap: 40px;
+#header .service .gnb {
+    float: left;
 }
 
-#header .gnb>ul>li {
+#header .service .gnb>ul>li {
     position: relative;
+    float: left;
 }
 
-#header .gnb>ul>li~li::before {
+#header .service .gnb>ul>li a {
+    display: block;
+    padding: 0 20px;
+}
+
+#header .service .gnb>ul>li~li::before {
     content: '';
     position: absolute;
-    left: -20px;
+    left: 0;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 1px;
@@ -138,6 +162,10 @@ p {
     background: #ddd;
 }
 
+#header .service .right {
+    float: left;
+    margin: 0 0 0 30px;
+}
 
 #event {
     padding: 100px 0;
@@ -158,15 +186,14 @@ p {
 }
 
 #event .inner {
-    display: flex;
-    gap: 30px;
     width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
 }
 
 #event .inner figure {
-    flex: 1;
+    float: left;
+    width: 33.33%;
+    padding: 0 15px;
 }
 
 #event .inner figure img {
