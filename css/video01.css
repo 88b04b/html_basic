@@ -82,7 +82,7 @@ h2 {
     cursor: pointer;
 }
 
-/* 
+
 .hidden {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -91,7 +91,7 @@ h2 {
     margin: -1px;
     overflow: hidden;
 }
- */
+
 
 .main_visual {
     position: relative;
